@@ -1,2 +1,5 @@
 https://stackshare.io/stackups/pypi-openpyxl-vs-pypi-xlrd#:~:text=AlternateCMS%2C%20*%2C%20and%20*%20are,stacks%20and%206%20developer%20stacks.
 https://stackoverflow.com/questions/38056233/python-search-excel-sheet-for-specific-strings-in-a-column-and-extract-those-ro
+https://stackoverflow.com/questions/35823835/reading-excel-file-is-magnitudes-slower-using-openpyxl-compared-to-xlrd
+https://www.vitoshacademy.com/how-to-search-in-a-worksheet-with-python/
+https://www.freecodecamp.org/news/how-to-create-read-update-and-search-through-excel-files-using-python-c70680d811d4/
