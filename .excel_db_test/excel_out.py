@@ -15,8 +15,13 @@ It was created to test the viability for using an excel doc.
 import openpyxl
 
 theFile = openpyxl.load_workbook(
-    '.excel_db_test\product-details (DATA INPUT).xlsx')
+    '.excel_db_test\product-details.xlsx')
 allSheetNames = theFile.sheetnames
+
+# Default parameters for product-details.xlsx is "ABCDEFGHIJKLMNOPQ"
+
+parameters = str(input(
+    "Please enter the the columns in alphabetical order that you wish to display "))
 
 print("All sheet names {} " .format(theFile.sheetnames))
 
@@ -32,7 +37,7 @@ for sheet in allSheetNames:
 
     for row in range(1, currentSheet.max_row + 1):
         # print(row)
-        for column in "ABCDEF":  # Here you can add or reduce the columns
+        for column in parameters:  # Here you can add or reduce the columns
             cell_name = "{}{}".format(column, row)
             # print(cell_name)
             print("cell position {} has value {}".format(
