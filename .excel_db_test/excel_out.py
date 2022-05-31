@@ -17,7 +17,7 @@ all_sheets = yandiya_db.sheetnames
 # Default parameters for product-details.xlsx is "ABCDEFGHIJKLMNOPQ"
 
 parameters = str(input(
-    "Please enter the the columns in alphabetical order that you wish to display "))
+    "Please enter the columns in alphabetical order that you wish to display "))
 
 print("All sheet names {} " .format(yandiya_db.sheetnames))
 

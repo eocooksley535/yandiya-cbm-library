@@ -20,3 +20,11 @@ records_table = yandiya_db.active
 # print(records_table)
 
 # ask user for input, iterate over column PartNo or "A" , check if input value is equal to any values in column
+parameters = str(input(
+    "Please enter the PartNo you wish to seach for "))
+
+partNo = records_table['A']
+
+for cell in records_table:
+    if {cell.value} == parameters:
+        print("Success!!!!")
