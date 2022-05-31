@@ -12,26 +12,20 @@ import openpyxl
 
 yandiya_db = openpyxl.load_workbook(
     '.excel_db_test\yandiya-db.xlsx')
-
-# print(yandiya_db.sheetnames)
-
 records_table = yandiya_db.active
+partNo = records_table['A']
 
-# print(records_table)
-
-# ask user for input, iterate over column PartNo or "A" , check if input value is equal to any values in column
+# ask user for input, iterate over column PartNo or "A" , check if input value is equal to any values in column and output entrie column
 parameters = str(input(
     "Please enter the PartNo you wish to seach for "))
 
-partNo = records_table['A']
-# print(partNo)
-
 for cell in partNo:
-    # print(f'{cell.value}')
     if cell.value == parameters:
-        print("Success!!!!")
+        reqData = records_table[cell.row]
         break
-    else:
-        print("not found in", cell)
 
-print("search done")
+output = []
+for cell in reqData:
+    output.append(cell.value)
+
+print(output)
