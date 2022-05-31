@@ -30,5 +30,8 @@ for cell in partNo:
     # print(f'{cell.value}')
     if cell.value == parameters:
         print("Success!!!!")
+        break
     else:
         print("not found in", cell)
+
+print("search done")
