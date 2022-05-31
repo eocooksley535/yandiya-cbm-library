@@ -24,7 +24,11 @@ parameters = str(input(
     "Please enter the PartNo you wish to seach for "))
 
 partNo = records_table['A']
+# print(partNo)
 
-for cell in records_table:
-    if {cell.value} == parameters:
+for cell in partNo:
+    # print(f'{cell.value}')
+    if cell.value == parameters:
         print("Success!!!!")
+    else:
+        print("not found in", cell)
