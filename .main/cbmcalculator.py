@@ -3,8 +3,7 @@ Author: Elvis Obero-Atkins
 Last Edited by: Elvis Obero-Atkins
 
 This py script is main component of the yandiya-cbm-library
-As well as this py script all the csv files are required also.
-These includes: product-details.csv, pallet-types.csv, parcel-types.csv & delivery-costs.csv
+As well as this py script the yandiya-db.xslx (excel file) is required
 
 """
 
@@ -14,14 +13,24 @@ import openpyxl
 
 def searching_product(parameters):
     yandiya_db = openpyxl.load_workbook(
-        '.excel_db_test\yandiya-db.xlsx')
+        '.main\yandiya-db.xlsx')
 
     records_table = yandiya_db.active
     partNo = records_table['A']
-    #barcode = records_table['B']
-    #sku = records_table['C']
+    barcode = records_table['B']
+    sku = records_table['C']
 
     for cell in partNo:
+        if cell.value == parameters:
+            reqData = records_table[cell.row]
+            break
+
+    for cell in barcode:
+        if cell.value == parameters:
+            reqData = records_table[cell.row]
+            break
+
+    for cell in sku:
         if cell.value == parameters:
             reqData = records_table[cell.row]
             break
@@ -39,4 +48,8 @@ def cbm_calculations(parameters: list, itemQuantity: int):
     # for i in range(len(itemDimensions)):
     #    cbmCalculated = cbmCalculated * itemDimensions[i]
     # return cbmCalculated
+    return 0
+
+
+def headings():
     return 0
