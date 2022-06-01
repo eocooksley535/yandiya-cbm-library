@@ -10,6 +10,18 @@ As well as this py script the yandiya-db.xslx (excel file) is required
 
 import openpyxl
 import time
+import timeit
+
+from openpyxl import Workbook
+
+
+def extrl(parameters, records_table: Workbook.active):
+    if len(parameters) == 5:
+        return records_table['C']  # sku
+    elif len(parameters) == 13:
+        return records_table['B']  # barcode
+    else:
+        return records_table['A']  # partNo
 
 
 def searching_product(parameters):
@@ -17,27 +29,18 @@ def searching_product(parameters):
         '.main\yandiya-db.xlsx')
     records_table = yandiya_db.active
 
-    t0 = time.clock()
+    search_column = extrl(parameters, records_table)
 
-    if len(parameters) == 5:
-        search_column = records_table['C']  # sku
-    elif len(parameters) == 13:
-        search_column = records_table['B']  # barcode
-    else:
-        search_column = records_table['A']  # partNo
+    timeit.repeat("for ")
 
     for cell in search_column:
         if cell.value == parameters:
             reqData = records_table[cell.row]
             break
 
-    t1 = time.clock() - t0
-
     output = []
     for cell in reqData:
         output.append(cell.value)
-
-    print("Time taken using Elif: ", t1 - t0)
 
     return output
 
