@@ -9,6 +9,7 @@ As well as this py script the yandiya-db.xslx (excel file) is required
 
 
 import openpyxl
+import time
 
 
 def searching_product(parameters):
@@ -16,10 +17,12 @@ def searching_product(parameters):
         '.main\yandiya-db.xlsx')
     records_table = yandiya_db.active
 
-    if len(parameters) == 13:
-        search_column = records_table['B']  # barcode
-    elif len(parameters) == 5:
+    t0 = time.clock()
+
+    if len(parameters) == 5:
         search_column = records_table['C']  # sku
+    elif len(parameters) == 13:
+        search_column = records_table['B']  # barcode
     else:
         search_column = records_table['A']  # partNo
 
@@ -28,9 +31,13 @@ def searching_product(parameters):
             reqData = records_table[cell.row]
             break
 
+    t1 = time.clock() - t0
+
     output = []
     for cell in reqData:
         output.append(cell.value)
+
+    print("Time taken using Elif: ", t1 - t0)
 
     return output
 
