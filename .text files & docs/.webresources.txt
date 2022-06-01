@@ -9,3 +9,5 @@ https://python-forum.io/thread-21543.html
 https://realpython.com/openpyxl-excel-spreadsheets-python/
 
 https://www.youtube.com/playlist?list=PLCC34OHNcOtrMWIf_MXWrCajQwp3lL27T
+
+https://realpython.com/python-zip-function/#looping-over-multiple-iterables

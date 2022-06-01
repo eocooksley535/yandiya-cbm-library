@@ -8,20 +8,32 @@ These includes: product-details.csv, pallet-types.csv, parcel-types.csv & delive
 
 """
 
-import csv
-import pandas as pd
-import numpy as np
 
-# select and add to array OC W, H & D from row that contains searched values
+import openpyxl
 
 
-def searching_product(item):
-    inventoryDf = pd.read_csv('product_details.csv')
-    selectedRow = inventoryDf.loc[inventoryDf["partNo"] == item]
-    return selectedRow
+def searching_product(parameters):
+    yandiya_db = openpyxl.load_workbook(
+        '.excel_db_test\yandiya-db.xlsx')
+
+    records_table = yandiya_db.active
+    partNo = records_table['A']
+    #barcode = records_table['B']
+    #sku = records_table['C']
+
+    for cell in partNo:
+        if cell.value == parameters:
+            reqData = records_table[cell.row]
+            break
+
+    output = []
+    for cell in reqData:
+        output.append(cell.value)
+
+    return output
 
 
-def cbm_calculations():  # itemDimensions: tuple, itemQuantity: int):
+def cbm_calculations(parameters: list, itemQuantity: int):
     # multiple dimensions together and then by the quanity to get CBM
     #cbmCalculated = itemQuantity
     # for i in range(len(itemDimensions)):

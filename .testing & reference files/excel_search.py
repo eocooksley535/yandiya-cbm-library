@@ -14,6 +14,8 @@ yandiya_db = openpyxl.load_workbook(
     '.excel_db_test\yandiya-db.xlsx')
 records_table = yandiya_db.active
 partNo = records_table['A']
+#barcode = records_table['B']
+#sku = records_table['C']
 
 # ask user for input, iterate over column PartNo or "A" , check if input value is equal to any values in column and output entrie column
 parameters = str(input(
