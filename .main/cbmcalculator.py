@@ -14,23 +14,16 @@ import openpyxl
 def searching_product(parameters):
     yandiya_db = openpyxl.load_workbook(
         '.main\yandiya-db.xlsx')
-
     records_table = yandiya_db.active
-    partNo = records_table['A']
-    barcode = records_table['B']
-    sku = records_table['C']
 
-    for cell in partNo:
-        if cell.value == parameters:
-            reqData = records_table[cell.row]
-            break
+    if len(parameters) == 13:
+        search_column = records_table['B']  # barcode
+    elif len(parameters) == 5:
+        search_column = records_table['C']  # sku
+    else:
+        search_column = records_table['A']  # partNo
 
-    for cell in barcode:
-        if cell.value == parameters:
-            reqData = records_table[cell.row]
-            break
-
-    for cell in sku:
+    for cell in search_column:
         if cell.value == parameters:
             reqData = records_table[cell.row]
             break
