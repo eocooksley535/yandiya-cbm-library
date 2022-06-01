@@ -24,4 +24,4 @@ inWarehouse = cbmcalculator.searching_product(parameters)
 print(inWarehouse)
 
 
-#cbm = cbmcalculator.cbm_calculations(inWarehouse, productQuantity)
+#cbm = cbmcalculator.calculate(inWarehouse, productQuantity)

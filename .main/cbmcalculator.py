@@ -35,7 +35,7 @@ def searching_product(parameters):
     return output
 
 
-def cbm_calculations(parameters: list, itemQuantity: int):
+def calculate(parameters: list, itemQuantity: int):
     # multiple dimensions together and then by the quanity to get CBM
     #cbmCalculated = itemQuantity
     # for i in range(len(itemDimensions)):
@@ -45,4 +45,6 @@ def cbm_calculations(parameters: list, itemQuantity: int):
 
 
 def headings():
-    return 0
+    return ['partNo', 'barcode', 'sku', 'productTitle', 'pWidth', 'pHeight', 'pDepth', 'icWidth', 'icHeight',
+            'icDepth', 'icWeight', 'icQty', 'ocWidth', 'ocHeight', 'ocDepth', 'ocWeight', 'ocQty']
+    # 14 , 13, 12
