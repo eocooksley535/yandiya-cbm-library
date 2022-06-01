@@ -11,3 +11,5 @@ https://realpython.com/openpyxl-excel-spreadsheets-python/
 https://www.youtube.com/playlist?list=PLCC34OHNcOtrMWIf_MXWrCajQwp3lL27T
 
 https://realpython.com/python-zip-function/#looping-over-multiple-iterables
+
+https://www.askpython.com/python-modules/tabulate-tables-in-python
