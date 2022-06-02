@@ -16,12 +16,11 @@ include an Odoo module and WebUI to interact with the yandiya-cbm-library
 """
 import cbmcalculator
 
-parameters = input("Whats the product number, barcode or sku of the item?")
-# productQuantity = input(int(
-#    "\nWhat's the quantity of the items that you need."))
+parameters = input("Whats the product number, barcode or sku of the item? ")
+productQuantity = int(input(
+    "\nWhat's the quantity of the items that you need? "))
 
 inWarehouse = cbmcalculator.searching_product(parameters)
-print(inWarehouse)
+cbm = cbmcalculator.calculate(inWarehouse, productQuantity)
 
-
-#cbm = cbmcalculator.calculate(inWarehouse, productQuantity)
+print(cbm)

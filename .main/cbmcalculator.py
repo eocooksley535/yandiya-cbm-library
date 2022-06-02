@@ -36,16 +36,13 @@ def searching_product(parameters):
     return output
 
 
+# Cubic Meter Formula
+# Length (cm) X Width (cm) X Height (cm) / 1000000 = Cubic meter (m3)
 def calculate(parameters: list, itemQuantity: int):
-    # multiple dimensions together and then by the quanity to get CBM
-    #cbmCalculated = itemQuantity
-    # for i in range(len(itemDimensions)):
-    #    cbmCalculated = cbmCalculated * itemDimensions[i]
-    # return cbmCalculated
-    return 0
+    return int(parameters[12]) * int(parameters[13]) * int(parameters[14]) / 1000000
 
 
 def headings():
     return ['partNo', 'barcode', 'sku', 'productTitle', 'pWidth', 'pHeight', 'pDepth', 'icWidth', 'icHeight',
-            'icDepth', 'icWeight', 'icQty', 'ocWidth', 'ocHeight', 'ocDepth', 'ocWeight', 'ocQty']
+            'icDepth', 'icWeight', 'icQty', 'ocWidth', 'ocHeight', 'ocDepth', 'ocWeight', 'ocQty']  # 16 Items in list
     # 14 , 13, 12
