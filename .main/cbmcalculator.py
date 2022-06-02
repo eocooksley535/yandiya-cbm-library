@@ -36,13 +36,13 @@ def searching_product(parameters):
     return output
 
 
-# Cubic Meter Formula
-# Length (cm) X Width (cm) X Height (cm) / 1000000 = Cubic meter (m3)
 def calculate(parameters: list, itemQuantity: int):
-    return int(parameters[12]) * int(parameters[13]) * int(parameters[14]) / 1000000
+    if itemQuantity >= (float(parameters[16]) / 2):
+        return int(parameters[12]) * int(parameters[13]) * int(parameters[14]) / 1000000
+    else:
+        return (int(parameters[7]) * int(parameters[8]) * int(parameters[9]) / 1000000) * itemQuantity
 
 
 def headings():
     return ['partNo', 'barcode', 'sku', 'productTitle', 'pWidth', 'pHeight', 'pDepth', 'icWidth', 'icHeight',
-            'icDepth', 'icWeight', 'icQty', 'ocWidth', 'ocHeight', 'ocDepth', 'ocWeight', 'ocQty']  # 16 Items in list
-    # 14 , 13, 12
+            'icDepth', 'icWeight', 'icQty', 'ocWidth', 'ocHeight', 'ocDepth', 'ocWeight', 'ocQty']  # 17 (0 -16) Items in list
