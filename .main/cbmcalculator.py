@@ -9,19 +9,7 @@ As well as this py script the yandiya-db.xslx (excel file) is required
 
 
 import openpyxl
-import time
-import timeit
-
 from openpyxl import Workbook
-
-
-def extrl(parameters, records_table: Workbook.active):
-    if len(parameters) == 5:
-        return records_table['C']  # sku
-    elif len(parameters) == 13:
-        return records_table['B']  # barcode
-    else:
-        return records_table['A']  # partNo
 
 
 def searching_product(parameters):
@@ -29,9 +17,12 @@ def searching_product(parameters):
         '.main\yandiya-db.xlsx')
     records_table = yandiya_db.active
 
-    search_column = extrl(parameters, records_table)
-
-    timeit.repeat("for ")
+    if len(parameters) == 5:
+        search_column = records_table['C']  # sku
+    elif len(parameters) == 13:
+        search_column = records_table['B']  # barcode
+    else:
+        search_column = records_table['A']  # partNo
 
     for cell in search_column:
         if cell.value == parameters:
