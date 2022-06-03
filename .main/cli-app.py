@@ -21,7 +21,7 @@ productQuantity = int(input(
     "\nWhat's the quantity of the items that you need? "))
 
 inWarehouse = cbmcalculator.searching_product(parameters)
-print(inWarehouse)
 cbm = cbmcalculator.calculate(inWarehouse, productQuantity)
 
-print(cbm)
+print("The CBM is ", cbm[0], ", the total weight is ",
+      cbm[1], " the items will be sent in a ", cbm[2])

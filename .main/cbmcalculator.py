@@ -38,9 +38,28 @@ def searching_product(parameters):
 
 def calculate(parameters: list, itemQuantity: int):
     if itemQuantity >= (float(parameters[16]) / 2):
-        return int(parameters[12]) * int(parameters[13]) * int(parameters[14]) / 1000000
+        if int(parameters[15]) <= 30:
+            sendWith = "Parcel"
+        else:
+            sendWith = "Pallet"
+
+        cbm = (int(parameters[12]) * int(parameters[13])
+               * int(parameters[14]) / 1000000)
+
+        weight = int(parameters[15])
+
     else:
-        return (int(parameters[7]) * int(parameters[8]) * int(parameters[9]) / 1000000) * itemQuantity
+        if (int(parameters[10]) * itemQuantity) <= 30:
+            sendWith = "Parcel"
+        else:
+            sendWith = "Pallet"
+
+        cbm = ((int(parameters[7]) * int(parameters[8]) *
+                int(parameters[9]) / 1000000) * itemQuantity)
+
+        weight = (int(parameters[10]) * itemQuantity)
+
+    return [cbm, weight, sendWith]
 
 
 def headings():
