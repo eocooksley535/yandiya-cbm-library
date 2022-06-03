@@ -4,14 +4,8 @@ Last Edited by: Elvis Obero-Atkins
 
 This py script is NOT REQUIRED for yandiya-cbm-library to function
 
-It is a simple CLI python application that allows the user to 
-interact with the yandiya-cbm-library.
-
-It was created to make the initial development of 
-the yandiya-cbm-library easier to test
-
-later versions of this repository will 
-include an Odoo module and WebUI to interact with the yandiya-cbm-library
+It is CLI python application designed to interact 
+with the yandiya-cbm-library.
 
 """
 import cbmcalculator
@@ -21,7 +15,10 @@ productQuantity = int(input(
     "\nWhat's the quantity of the items that you need? "))
 
 inWarehouse = cbmcalculator.searching_product(parameters)
-cbm = cbmcalculator.calculate(inWarehouse, productQuantity)
+if inWarehouse == 0:
+    print("error. either incorrect input or item does not exist")
+else:
+    cbm = cbmcalculator.calculate(inWarehouse, productQuantity)
 
 print("The CBM is ", cbm[0], ", the total weight is ",
       cbm[1], " the items will be sent in a ", cbm[2])
