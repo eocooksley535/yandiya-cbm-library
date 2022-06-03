@@ -50,6 +50,7 @@ def calculate(parameters: list, itemQuantity: int):
 
     else:
         if (int(parameters[10]) * itemQuantity) <= 30:
+            # ValueError: invalid literal for int() with base 10: '4.78' on Line 52 ^
             sendWith = "Parcel"
         else:
             sendWith = "Pallet"
