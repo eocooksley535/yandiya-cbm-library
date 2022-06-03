@@ -22,6 +22,7 @@ def searching_product(parameters):
 
     Returns:
         list: stores the extracted excell row (if found)
+        int: 0 (if row not found)
     """
     yandiya_db = openpyxl.load_workbook(
         '.main\yandiya-db.xlsx')
@@ -34,10 +35,14 @@ def searching_product(parameters):
     else:
         search_column = records_table['A']  # partNo
 
+    reqData = 0
     for cell in search_column:
         if cell.value == parameters:
             reqData = records_table[cell.row]
             break
+
+    if reqData == 0:
+        return 0
 
     output = []
     for cell in reqData:

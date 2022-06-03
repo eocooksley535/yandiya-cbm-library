@@ -20,5 +20,5 @@ if inWarehouse == 0:
 else:
     cbm = cbmcalculator.calculate(inWarehouse, productQuantity)
 
-print("The CBM is ", cbm[0], ", the total weight is ",
-      cbm[1], " the items will be sent in a ", cbm[2])
+    print("The CBM is ", cbm[0], ", the total weight is ",
+          cbm[1], " the items will be sent in a ", cbm[2])
