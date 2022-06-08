@@ -13,15 +13,15 @@ The Python library is being written for Yandiya Technologies Ltd. Its purpose is
 ### Dependencies
 
 #### Prerequisites
-* [Python 3.10](https://www.python.org/downloads/) - older versions may work but haven't been tested
-* [yandiya-db.xlsx](https://github.com/elvybean/yandiya-cbm-library/blob/main/.main/yandiya-db.xlsx) - excel file that contains all the data required for the cbm library to function
+* [Python 3.10](https://www.python.org/downloads/) - older versions are likely to work as the code base doesn't utalize any python 3.10 specific features but this can't be ensured as no previous versions have been tested
+* [yandiya-db.xlsx](https://github.com/elvybean/yandiya-cbm-library/blob/main/.main/yandiya-db.xlsx) - excel file that contains all the data required for the cbm library to function, this is located in the .main folder of the repo
 
 #### Libraries
-[openpyxl](https://pypi.org/project/openpyxl/) - which can be installled via pip
+[openpyxl](https://pypi.org/project/openpyxl/) - which can be installled via pip once in the same directory python
 ```
 pip install openpyxl
 ```
-if the py global variable is enabled use
+OR if the py global variable is enabled the following line can be used as an alternative 
 ```
 py -m pip install openpyxl
 ```
@@ -45,6 +45,7 @@ This README.md section is unfinshed
 
 * Odoo Module to interact with the python library
 * Web UI to interact with the python library - using pyscript
+* pip package to simlify instillation of library
 
 ## Authors
 
