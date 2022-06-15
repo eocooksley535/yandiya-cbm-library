@@ -3,7 +3,8 @@
 #### Current Version Version 0.1
 
 - a python library written for Yandiya Technologies Ltd during my T Level Industry Placement.
-- currently meets 3 out of 5 of the milestones listed in the proposal
+- currently meets 2 out of 5 of the milestones listed in the proposal
+  - almost meets a 3rd milestone - 50% the way there 
 
 ## Description
 
