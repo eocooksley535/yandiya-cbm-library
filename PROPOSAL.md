@@ -19,7 +19,19 @@
 - My reasoning for this is that it would allow for the reusability of the code as if Yandiya in the future changes warehouse management software's most of the code can be reused.
 - Another reason for implementing it as a library is that it would make it easier for the development of other programs that would need the CBM calculator
 - Such as a Web interface that would allow warehouse employees to get an estimate and a 3D visualization of the CBM.
-- The solution will require the following in some form of a storable format (CSV / SQL / Database files etc.):
+
+## Stored Data Required by my proposed solution
+- Product Details:
+    - Full product list
+    - Each product‘s inner carton, outer carton dimensions and weight.
+- Pallet Details:
+  - Dimensions of each pallet type
+  - Maximum weight and height for each pallet type
+  - Pricing per Postcode for each pallet type
+- Parcel Details:
+  - Pricing per Postcode
+
+The solution will require the following in some form of a storable format (CSV / SQL / Database files etc.):
   - The dimensions of each pallet type and its maximum weight and height
   - Full Product list; with each product ‘s inner carton and outer carton dimensions and weight.
 
@@ -72,9 +84,3 @@ The Project will be documented in the following ways:
 
 - After Phase 1 is finished a CLI or basic GUI python program will be created to interact with the library so a user can input variables to see if the calculations are correct.
 - In future phases the solution will be tested on usability and ease of use rather than functionality as all core logic and functionality will be completed before any further development starts in future phases
-
-Data Stored Data Required by the Solution
-
-- Product Details
-- Pallet Types and Sizes
-- Pallet Pricing per Postcode
