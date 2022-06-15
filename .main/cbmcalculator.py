@@ -15,7 +15,7 @@ from openpyxl import Workbook
 
 
 def searching_product(parameters):
-    """
+    """searches an excel document based on user input of a product number, barcode or sku
     Args:
         parameters (string): a product number, barcode or sku that the 
                             user is using to search the excel for
@@ -52,10 +52,10 @@ def searching_product(parameters):
 
 
 def calculate(parameters: list, itemQuantity: int):
-    """
+    """searches a list variable for specific values and then calculates and returns cbm and total weight
     Args:
         parameters (string): stored extracted excel row
-        parameters (int): user inputted item quanitiy to be 
+        itemQuantity (int): user inputted item quanitiy to be 
             used in calculations
 
     Returns:
@@ -63,10 +63,11 @@ def calculate(parameters: list, itemQuantity: int):
                 a string that either contains Parcel or Pallet
     """
     if itemQuantity >= (float(parameters[16]) / 2):
-        if float(parameters[15]) <= 30:
-            sendWith = "Parcel"
-        else:
-            sendWith = "Pallet"
+
+        # if float(parameters[15]) <= 30:
+        #    sendWith = "Parcel"
+        # else:
+        #    sendWith = "Pallet"
 
         cbm = (int(parameters[12]) * int(parameters[13])
                * int(parameters[14]) / 1000000)
@@ -74,22 +75,38 @@ def calculate(parameters: list, itemQuantity: int):
         weight = float(parameters[15])
 
     else:
-        if (float(parameters[10]) * itemQuantity) <= 30:
-            """ ValueError: invalid literal for int() with base 10: '4.78' on Line 52 """
-            sendWith = "Parcel"
-        else:
-            sendWith = "Pallet"
+
+        # if (float(parameters[10]) * itemQuantity) <= 30:
+        #    """ ValueError: invalid literal for int() with base 10: '4.78' on Line 52 """
+        #    sendWith = "Parcel"
+        # else:
+        #    sendWith = "Pallet"
 
         cbm = ((int(parameters[7]) * int(parameters[8]) *
                 int(parameters[9]) / 1000000) * itemQuantity)
 
         weight = (float(parameters[10]) * itemQuantity)
 
-    return [cbm, weight, sendWith]
+    return [cbm, weight]
 
 
-def headings():
+def weight_logic(weight: float):
+    """calculates using simple logic whether or not a item needs to be send via parcel or package
+
+    Args:
+        weight (float): _description_
+
+    Returns:
+        string: value of parcel or pallet depending on outcome of logic
     """
+    if weight <= 30:
+        return "Parcel"
+    else:
+        return "Pallet"
+
+
+def productdetails_headings():
+    """returns the headings of the product-details sheet
     Returns:
         list: stores all the headings for each of the columns
     """
