@@ -11,6 +11,7 @@ It meets three milestones outlined in the proposal
 To Do:
 - logic for height considerations
 - maximum length for parcels which is 3 meters
+- Postcode logic - 2832 to consider
 """
 
 
