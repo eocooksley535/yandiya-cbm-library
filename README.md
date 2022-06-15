@@ -1,6 +1,6 @@
 # Yandiya CBM Library
 
-#### Current Version V0.1
+#### Current Version Version 0.1
 
 - a python library written for Yandiya Technologies Ltd during my T Level Industry Placement.
 - currently meets 3 out of 5 of the milestones listed in the proposal
@@ -10,6 +10,16 @@
 The Python library is being written for Yandiya Technologies Ltd. Its purpose is to allow their employees to easily calculate the CBM (Cubic Meter) of their products the library takes user input of which of Yandiya's products they are packaging and it calculates the CBM, whether to use a pallet or parcel, if appicable which type of pallet would be best to use and the cost of delivery.
 
 ## Getting Started
+
+### Knowledge Requirements
+
+The following knowledge is required to effectively contribute to this repo
+
+- Python basics and fundamentals
+- Array manipulation in python
+- openpyxl basics and fundamentals
+  - OR csv library basics and fundamentals - as syntax between the two libraries are similar
+- Git and Github basics (obviously)
 
 ### Dependencies
 
@@ -58,18 +68,18 @@ This README.md section is unfinshed
 
 Contributors names and contact info
 
-Elvis Obero-Atkins
-[LinkedIn](www.linkedin.com/in/elvisoberoatkins)
+- Elvis Obero-Atkins [GitHub](https://github.com/elvybean) | [LinkedIn](www.linkedin.com/in/elvisoberoatkins)
 
 ## Version History
 
-- 0.1
-  - Accesses Yandiya's product data from yandiya-db.xlsx
-  - Library takes user input for PartNo, sku or barcode
-  - Searches excel file for the product the user is looking for
-  - Calculates CBM for the product based on it's dimensions and quantity of the product
-  - Calculates based on the total weight weather to send products via pallets or parcel
-  - Has basic error messages in the event the search returns no values
+### Version 0.1
+
+- Accesses Yandiya's product data from yandiya-db.xlsx
+- Library takes user input for PartNo, sku or barcode
+- Searches excel file for the product the user is looking for
+- Calculates CBM for the product based on it's dimensions and quantity of the product
+- Calculates based on the total weight weather to send products via pallets or parcel
+- Has basic error messages in the event the search returns no values
 
 ## License
 

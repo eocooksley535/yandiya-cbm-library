@@ -92,7 +92,6 @@ def calculate(parameters: list, itemQuantity: int):
 
 def weight_logic(weight: float):
     """calculates using simple logic whether or not a item needs to be send via parcel or package
-
     Args:
         weight (float): _description_
 
