@@ -7,6 +7,10 @@ As well as this py script the yandiya-db.xslx (excel file) is required
 
 This is V0.1 of the yandiya-cbm-library
 It meets three milestones outlined in the proposal
+
+To Do:
+- logic for height considerations
+- maximum length for parcels which is 3 meters
 """
 
 
@@ -54,13 +58,12 @@ def searching_product(parameters):
 def calculate(parameters: list, itemQuantity: int):
     """searches a list variable for specific values and then calculates and returns cbm and total weight
     Args:
-        parameters (string): stored extracted excel row
+        parameters (list): stored extracted excel row
         itemQuantity (int): user inputted item quanitiy to be 
             used in calculations
 
     Returns:
-        list: stores the calculated cbm, total weight and 
-                a string that either contains Parcel or Pallet
+        list: stores the calculated cbm, total weight
     """
     if itemQuantity >= (float(parameters[16]) / 2):
 
