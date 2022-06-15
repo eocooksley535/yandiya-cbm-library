@@ -1,9 +1,0 @@
-brainstorm of additional developemnt ideas
-
-version of the library that stores the data in a database file (SQL) instead
-if the library is SQL based it should have additional features such
-    export database as excel function
-
-All programs that interact with libaray should work regardless of 
-how the libaray now stores the data (CLI, GUI, WebUI)
-
